@@ -1,0 +1,1 @@
+import{_ as e,x as t,v as o,y as c}from"./entry.OEFOQB1Z.js";const n={},r=c("h1",null,"jtoh-xl-tower-tracker Nuxt3",-1),s=[r];function _(a,l){return o(),t("div",null,s)}const i=e(n,[["render",_]]);export{i as default};

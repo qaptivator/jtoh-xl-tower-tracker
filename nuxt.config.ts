@@ -13,7 +13,7 @@ export default defineNuxtConfig({
           content: "JToH XL Project Tower Tracker",
         },
       ],
-      link: [{ rel: "icon", type: "image/svg", href: "/favicon.svg" }],
+      link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
     },
     baseURL: "/jtoh-xl-tower-tracker/",
     buildAssetsDir: "assets",

@@ -3,23 +3,25 @@ export default defineNuxtConfig({
   ssr: false,
   app: {
     head: {
-      title: "jtoh-xl-tower-tracker",
+      title: "JToH XL Project Tower Tracker",
       meta: [
         { charset: "utf-8" },
         { name: "viewport", content: "width=device-width, initial-scale=1" },
         {
           hid: "description",
           name: "description",
-          content: "JToH XL Project Tower Tracker",
+          content: "Shows your JToH XL Project tower completions.",
         },
       ],
-      link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
+      link: [
+        { rel: "shortcut icon", type: "image/x-icon", href: "favicon.ico" },
+      ],
     },
     baseURL: "/jtoh-xl-tower-tracker/",
     buildAssetsDir: "assets",
   },
   modules: ["@nuxtjs/tailwindcss"],
-  css: [],
+  css: ["~/assets/css/main.css"],
   postcss: {
     plugins: {
       tailwindcss: {},

@@ -1,35 +1,39 @@
-enum AreaType {
+export enum AreaType {
   "Realm",
   "Subrealm",
 }
 
-enum ActionType {
-  "Citadel",
+export enum ActionType {
   "Tower",
+  "Steeple",
+  "Citadel",
   "Obelisk",
   "Mini",
   "Event",
 }
 
-type World = {
-  id: number;
+export type Difficulty = {
+  name: string;
+  color: string; // you will have to define these color classes inside tailwind config because of JIT compiler
+};
+
+export type World = {
   name: string;
 };
 
-type AreaRequirement = {
-  diff: number; // difficulty in number
+export type AreaRequirement = {
+  studs: number; // difficulty in number
   count: number;
 };
 
-type Area = {
-  id: number;
+export type Area = {
   name: string;
   requirements: AreaRequirement[];
-  world: number; // world id
+  world: number; // world index
   type: AreaType;
 };
 
-type Action = {
+export type Action = {
   id: number;
   name: string;
   acronym: string;
@@ -39,40 +43,67 @@ type Action = {
   area: number; // area id
 };
 
-type TowerData = {
-  difficulties: string[];
-  worlds: World[];
+export type TowerData = {
+  difficulties: Difficulty[];
+  worlds: string[];
   areas: Area[];
   actions: Action[];
 };
 
 export const towerdata = {
   difficulties: [
-    "Easy",
-    "Medium",
-    "Hard",
-    "Difficult",
-    "Challenging",
-    "Intense",
-    "Remorseless",
-    "Insane",
-    "Extreme",
-    "Terrifying",
-    "Catastrophic",
-  ],
-  worlds: [
     {
-      id: 0,
-      name: "The great inferno",
+      name: "Easy",
+      color: "text-green-400",
+    },
+    {
+      name: "Medium",
+      color: "text-yellow-300",
+    },
+    {
+      name: "Hard",
+      color: "text-orange-400",
+    },
+    {
+      name: "Difficult",
+      color: "text-red-500",
+    },
+    {
+      name: "Challenging",
+      color: "text-red-700",
+    },
+    {
+      name: "Intense",
+      color: "text-slate-800",
+    },
+    {
+      name: "Remorseless",
+      color: "text-pink-400",
+    },
+    {
+      name: "Insane",
+      color: "text-blue-600",
+    },
+    {
+      name: "Extreme",
+      color: "text-sky-400",
+    },
+    {
+      name: "Terrifying",
+      color: "text-cyan-300",
+    },
+    {
+      name: "Catastrophic",
+      color: "text-white",
     },
   ],
+  worlds: ["The Great Inferno", "Spatial System"],
   areas: [
     {
-      id: 0,
       name: "Ring 1",
       requirements: [
         {
-          diff: 0,
+          studs: 0,
           count: 0,
         },
       ],
@@ -80,11 +111,10 @@ export const towerdata = {
       type: AreaType.Realm,
     },
     {
-      id: 1,
       name: "Ring 2",
       requirements: [
         {
-          diff: 0,
+          studs: 0,
           count: 0,
         },
       ],
@@ -92,11 +122,10 @@ export const towerdata = {
       type: AreaType.Realm,
     },
     {
-      id: 2,
       name: "Ring 3",
       requirements: [
         {
-          diff: 0,
+          studs: 0,
           count: 0,
         },
       ],
@@ -104,40 +133,29 @@ export const towerdata = {
       type: AreaType.Realm,
     },
     {
-      id: 3,
-      name: "Ring 4",
-      requirements: [
-        {
-          diff: 0,
-          count: 0,
-        },
-      ],
-      world: 0,
-      type: AreaType.Realm,
-    },
-    {
-      id: 4,
       name: "Forgotten Ridge",
       requirements: [
         {
-          diff: 0,
+          studs: 0,
           count: 0,
         },
       ],
       world: 0,
       type: AreaType.Subrealm,
     },
+    /*{
+      name: "Ring 4",
+      requirements: [
+        {
+          studs: 0,
+          count: 0,
+        },
+      ],
+      world: 0,
+      type: AreaType.Realm,
+    },*/
   ],
   actions: [
-    {
-      id: 0,
-      name: "Tower of WHY",
-      acronym: "lol",
-      studs: 1.3,
-      badge: 100,
-      type: ActionType.Tower,
-      area: 0,
-    },
     {
       id: 0,
       name: "Citadel of Annoyingly Simple Trials",
@@ -273,5 +291,449 @@ export const towerdata = {
       type: ActionType.Citadel,
       area: 0,
     },
+    {
+      id: 0,
+      name: "Maybe A Citadel",
+      acronym: "MAC",
+      studs: 1.68,
+      badge: 2146372613,
+      type: ActionType.Mini,
+      area: 1,
+    },
+    {
+      id: 0,
+      name: "Citadel of One Equals Zero",
+      acronym: "CoOEZ",
+      studs: 1.99,
+      badge: 2146372639,
+      type: ActionType.Citadel,
+      area: 1,
+    },
+    {
+      id: 0,
+      name: "Citadel of Generic Entertainment",
+      acronym: "CoGE",
+      studs: 2.97,
+      badge: 2147367443,
+      type: ActionType.Citadel,
+      area: 1,
+    },
+    {
+      id: 0,
+      name: "Citadel of Phone Snapping",
+      acronym: "CoPS",
+      studs: 3.46,
+      badge: 2144669837,
+      type: ActionType.Citadel,
+      area: 1,
+    },
+    {
+      id: 0,
+      name: "Citadel of Big Hole",
+      acronym: "CoBH",
+      studs: 4.44,
+      badge: 2144669840,
+      type: ActionType.Citadel,
+      area: 1,
+    },
+    {
+      id: 0,
+      name: "Citadel of Overcoming Hatred",
+      acronym: "CoOH",
+      studs: 4.59,
+      badge: 2145115408,
+      type: ActionType.Citadel,
+      area: 1,
+    },
+    {
+      id: 0,
+      name: "Citadel of Freezing Hands",
+      acronym: "CoFH",
+      studs: 5.49,
+      badge: 2145115412,
+      type: ActionType.Citadel,
+      area: 1,
+    },
+    {
+      id: 0,
+      name: "Citadel of Shattered Dreams",
+      acronym: "CoSD",
+      studs: 6.31,
+      badge: 2145115428,
+      type: ActionType.Citadel,
+      area: 1,
+    },
+    {
+      id: 0,
+      name: "Citadel of Deep Darkness",
+      acronym: "CoDD",
+      studs: 6.32,
+      badge: 2145115424,
+      type: ActionType.Citadel,
+      area: 1,
+    },
+    {
+      id: 0,
+      name: "Citadel of Table Flipping",
+      acronym: "CoTF",
+      studs: 6.9,
+      badge: 2146372548,
+      type: ActionType.Citadel,
+      area: 1,
+    },
+    {
+      id: 0,
+      name: "Citadel of Traps",
+      acronym: "CoT",
+      studs: 7.09,
+      badge: 2146372655,
+      type: ActionType.Citadel,
+      area: 1,
+    },
+    {
+      id: 0,
+      name: "Citadel of Falling and Failing",
+      acronym: "CoFaF",
+      studs: 7.17,
+      badge: 2145115416,
+      type: ActionType.Citadel,
+      area: 1,
+    },
+    {
+      id: 0,
+      name: "Citadel of Eternal Suffering",
+      acronym: "CoES",
+      studs: 7.66,
+      badge: 2146372561,
+      type: ActionType.Citadel,
+      area: 1,
+    },
+    {
+      id: 0,
+      name: "Obelisk of Wacky Strategy",
+      acronym: "OoWS",
+      studs: 8.32,
+      badge: 2146372604,
+      type: ActionType.Obelisk,
+      area: 1,
+    },
+    {
+      id: 0,
+      name: "Citadel of Difficulty Chart",
+      acronym: "CoDC",
+      studs: 9.43,
+      badge: 2146372585,
+      type: ActionType.Citadel,
+      area: 1,
+    },
+    {
+      id: 0,
+      name: "Citadel of Funny Thoughts",
+      acronym: "CoFT",
+      studs: 1.98,
+      badge: 2149523272,
+      type: ActionType.Citadel,
+      area: 2,
+    },
+    {
+      id: 0,
+      name: "Citadel of Inverted Colours",
+      acronym: "CoIC",
+      studs: 2.43,
+      badge: 2149523274,
+      type: ActionType.Citadel,
+      area: 2,
+    },
+    {
+      id: 0,
+      name: "Citadel of Zig Zag",
+      acronym: "CoZZ",
+      studs: 2.64,
+      badge: 2149523291,
+      type: ActionType.Citadel,
+      area: 2,
+    },
+    {
+      id: 0,
+      name: "Citadel of Ancient Trickery",
+      acronym: "CoAT",
+      studs: 3.44,
+      badge: 2149523279,
+      type: ActionType.Citadel,
+      area: 2,
+    },
+    {
+      id: 0,
+      name: "Citadel of Deep Sighing",
+      acronym: "CoDS",
+      studs: 3.55,
+      badge: 2149523285,
+      type: ActionType.Citadel,
+      area: 2,
+    },
+    {
+      id: 0,
+      name: "Citadel of Winning Every Run",
+      acronym: "CoWER",
+      studs: 3.72,
+      badge: 2150349047,
+      type: ActionType.Citadel,
+      area: 2,
+    },
+    {
+      id: 0,
+      name: "Citadel of Fatness",
+      acronym: "CoF",
+      studs: 4.26,
+      badge: 2150349039,
+      type: ActionType.Citadel,
+      area: 2,
+    },
+    {
+      id: 0,
+      name: "Citadel of Slight Inconvenience",
+      acronym: "CoSI",
+      studs: 4.29,
+      badge: 2150349054,
+      type: ActionType.Citadel,
+      area: 2,
+    },
+    {
+      id: 0,
+      name: "Citadel of Lotsa Damage",
+      acronym: "CoLD",
+      studs: 5.39,
+      badge: 2150349061,
+      type: ActionType.Citadel,
+      area: 2,
+    },
+    {
+      id: 0,
+      name: "Citadel of Wall Hugging",
+      acronym: "CoWH",
+      studs: 5.49,
+      badge: 2150349056,
+      type: ActionType.Citadel,
+      area: 2,
+    },
+    {
+      id: 0,
+      name: "Citadel of Despair",
+      acronym: "CoD",
+      studs: 6.31,
+      badge: 2151715957,
+      type: ActionType.Citadel,
+      area: 2,
+    },
+    {
+      id: 0,
+      name: "Obelisk of Heights and Depths",
+      acronym: "OoHaD",
+      studs: 6.7,
+      badge: 2151715965,
+      type: ActionType.Obelisk,
+      area: 2,
+    },
+    {
+      id: 0,
+      name: "Technically A Citadel",
+      acronym: "TaC",
+      studs: 7.51,
+      badge: 2151715970,
+      type: ActionType.Mini,
+      area: 2,
+    },
+    {
+      id: 0,
+      name: "Citadel of Utter Confusion",
+      acronym: "CoUC",
+      studs: 9.15,
+      badge: 2151715960,
+      type: ActionType.Citadel,
+      area: 2,
+    },
+    {
+      id: 0,
+      name: "Tower of Meaningless Decisions",
+      acronym: "ToMD",
+      studs: 1.97,
+      badge: 2152337434,
+      type: ActionType.Tower,
+      area: 3,
+    },
+    {
+      id: 0,
+      name: "Citadel of Jolly Good Fun",
+      acronym: "CoJGF",
+      studs: 2.77,
+      badge: 2152337431,
+      type: ActionType.Citadel,
+      area: 3,
+    },
+    {
+      id: 0,
+      name: "Tower of Fading Memories",
+      acronym: "ToFM",
+      studs: 2.98,
+      badge: 0,
+      type: ActionType.Tower,
+      area: 3,
+    },
+    {
+      id: 0,
+      name: "Tower of Low Woe",
+      acronym: "ToLW",
+      studs: 3.48,
+      badge: 2152337445,
+      type: ActionType.Tower,
+      area: 3,
+    },
+    {
+      id: 0,
+      name: "Tower of Pursuit",
+      acronym: "ToP",
+      studs: 3.78,
+      badge: 2152337440,
+      type: ActionType.Tower,
+      area: 3,
+    },
+    {
+      id: 0,
+      name: "Once Was a Citadel",
+      acronym: "OWaC",
+      studs: 4.19,
+      badge: 2457956684926212,
+      type: ActionType.Mini,
+      area: 3,
+    },
+    {
+      id: 0,
+      name: "Tower of Uninstalling Roblox",
+      acronym: "ToUR",
+      studs: 4.55,
+      badge: 2152337448,
+      type: ActionType.Tower,
+      area: 3,
+    },
+    {
+      id: 0,
+      name: "Tower of Wall Punching",
+      acronym: "ToWP",
+      studs: 4.87,
+      badge: 2152911228,
+      type: ActionType.Tower,
+      area: 3,
+    },
+    {
+      id: 0,
+      name: "Citadel of Immense Ire",
+      acronym: "CoII",
+      studs: 5.45,
+      badge: 2152911232,
+      type: ActionType.Citadel,
+      area: 3,
+    },
+    {
+      id: 0,
+      name: "Citadel of Versatility",
+      acronym: "CoV",
+      studs: 5.57,
+      badge: 2152911239,
+      type: ActionType.Citadel,
+      area: 3,
+    },
+    {
+      id: 0,
+      name: "Tower of Climbing",
+      acronym: "ToC",
+      studs: 5.88,
+      badge: 2152911244,
+      type: ActionType.Tower,
+      area: 3,
+    },
+    {
+      id: 0,
+      name: "Citadel of Unrestrained Vitriol",
+      acronym: "CoUV",
+      studs: 6.0,
+      badge: 2960024175380137,
+      type: ActionType.Citadel,
+      area: 3,
+    },
+    {
+      id: 0,
+      name: "Citadel of Triangular Covering",
+      acronym: "CoTC",
+      studs: 5.5,
+      badge: 2152911250,
+      type: ActionType.Citadel,
+      area: 3,
+    },
+    {
+      id: 0,
+      name: "Tower of Huge Pain",
+      acronym: "ToHP",
+      studs: 6.75,
+      badge: 2153147187,
+      type: ActionType.Tower,
+      area: 3,
+    },
+    {
+      id: 0,
+      name: "Citadel of Increasing Stress",
+      acronym: "CoIS",
+      studs: 0,
+      badge: 2153147190,
+      type: ActionType.Citadel,
+      area: 3,
+    },
+    {
+      id: 0,
+      name: "Citadel of Dangerous Expeditions",
+      acronym: "CoDE",
+      studs: 7.39,
+      badge: 2153147193,
+      type: ActionType.Citadel,
+      area: 3,
+    },
+    {
+      id: 0,
+      name: "Obelisk of Weird Nostalgia",
+      acronym: "OoWN",
+      studs: 7.77,
+      badge: 3554752366195791,
+      type: ActionType.Obelisk,
+      area: 3,
+    },
+    {
+      id: 0,
+      name: "Tower of Towering Pillars",
+      acronym: "ToTP",
+      studs: 7.99,
+      badge: 2153147198,
+      type: ActionType.Tower,
+      area: 3,
+    },
+    {
+      id: 0,
+      name: "Citadel of Mind Breaking",
+      acronym: "CoMB",
+      studs: 8.96,
+      badge: 2153147201,
+      type: ActionType.Citadel,
+      area: 3,
+    },
   ],
 } as TowerData;
+
+/*
+{
+  id: 0,
+  name: "Citadel of",
+  acronym: "Co",
+  studs: 0,
+  badge: 0,
+  type: ActionType.Citadel,
+  area: 0,
+},
+*/

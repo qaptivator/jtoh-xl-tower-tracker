@@ -1,0 +1,10 @@
+html,
+body,
+#__nuxt,
+#__layout {
+  overflow: hidden;
+  padding: 0 !important;
+  margin: 0 !important;
+  height: 100% !important;
+  width: 100% !important;
+}

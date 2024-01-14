@@ -1,9 +1,17 @@
-function _getDiff(difficulty: number): string {
-  return towerdata.difficulties[Math.floor(difficulty)];
+export function clamp(number: number, min: number, max: number): number {
+  return Math.max(min, Math.min(number, max));
 }
 
-function _getDiffPrefix(difficulty: number): string {
-  const _diff = (difficulty * 100) % 100; // need to do this due to floating point errors
+export function roundDiff(difficulty: number): number {
+  return Math.floor(Math.max(difficulty - 1, 0));
+}
+
+export function getDiff(difficulty: number): Difficulty {
+  return towerdata.difficulties[roundDiff(difficulty)];
+}
+
+export function getDiffPrefix(difficulty: number): string {
+  const _diff = (Math.max(difficulty - 1, 0) * 100) % 100; // need to do this due to floating point errors
   switch (true) {
     case _diff >= 89:
       return "Peak";
@@ -28,10 +36,6 @@ function _getDiffPrefix(difficulty: number): string {
   }
 }
 
-function _getFullDiff(difficulty: number): string {
-  return `${_getDiff(difficulty)} ${_getDiffPrefix(difficulty)}`;
+export function getDiffColor(difficulty: number): string {
+  return getDiff(difficulty).color;
 }
-
-export const getDiff = _getDiff;
-export const getDiffPrefix = _getDiffPrefix;
-export const getFullDiff = _getFullDiff;

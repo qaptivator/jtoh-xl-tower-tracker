@@ -8,8 +8,35 @@ export default {
     "./app.vue",
     "./error.vue",
   ],
+  // easy: {
+  //  light: '#75F347',
+  //  DEFAULT: '#75F347',
+  //  dark: '#75F347',
+  // },
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        transparent: "transparent",
+        current: "currentColor",
+        easy: "#75f347",
+        medium: "#fffe00",
+        hard: "#fd7c00",
+        difficult: "#ff0c02",
+        challenging: "#c10000",
+        intense: "#19232d",
+        remorseless: "#c800c8",
+        insane: "#0000ff",
+        extreme: "#0389ff",
+        terrifying: "#00ffff",
+        catastrophic: "#ffffff",
+      },
+    },
   },
   plugins: [],
+  safelist: [
+    {
+      pattern:
+        /(text)-(transparent|current|easy|medium|hard|difficult|challenging|intense|remorseless|insane|extreme|terrifying|catastrophic)/,
+    },
+  ],
 };

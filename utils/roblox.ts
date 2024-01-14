@@ -5,7 +5,7 @@ type UserBadgeInfo = {
   awardedDate: Date;
 };
 
-async function _getUsernameFromId(userId: number): Promise<string> {
+export async function getUsernameFromId(userId: number): Promise<string> {
   const res: any = await axios
     .get(`https://users.roproxy.com/v1/users/${userId}`)
     .catch((e) => {});
@@ -16,7 +16,7 @@ async function _getUsernameFromId(userId: number): Promise<string> {
   }
 }
 
-async function _getIdFromUsername(
+export async function getIdFromUsername(
   usernames: string | string[]
 ): Promise<number> {
   const _usernames: string[] = Array.isArray(usernames)
@@ -40,13 +40,13 @@ async function _getIdFromUsername(
   return results.length > 1 ? results : results[0];
 }
 
-async function _getBadgeAwardedTimestampts(
+export async function getBadgeAwardedTimestampts(
   userId: number,
   badgeIds: number | number[]
 ): Promise<UserBadgeInfo[]> {
   const _badgeIds: number[] = Array.isArray(badgeIds) ? badgeIds : [badgeIds];
 
-  if (await _getUsernameFromId(userId)) {
+  if (await getUsernameFromId(userId)) {
     const res: any = await axios
       .get(
         `https://badges.roproxy.com/v1/users/${userId}/badges/awarded-dates?badgeIds=${_badgeIds.join(
@@ -60,7 +60,3 @@ async function _getBadgeAwardedTimestampts(
     return [];
   }
 }
-
-export const getUsernameFromId = _getUsernameFromId;
-export const getIdFromUsername = _getIdFromUsername;
-export const getBadgeAwardedTimestampts = _getBadgeAwardedTimestampts;

@@ -1,6 +1,7 @@
 <template>
   <NuxtLoadingIndicator />
   <div class="w-full h-full">
+    <div class="fixed w-full h-full top-0 right-0 -z-50 bg-gray-50" />
     <div
       class="fixed top-0 right-0 z-40 flex border-b w-full items-center p-2 bg-white"
     >

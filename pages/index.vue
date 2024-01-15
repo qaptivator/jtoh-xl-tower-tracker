@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full h-full bg-gray-50 flex justify-center">
+  <div class="h-full flex justify-center">
     <div v-if="submitted" class="w-full h-full max-w-4xl">
       <div class="mt-20 text-center text-xl mb-1">
         {{ `${username}'s Tower Completions` }}
@@ -37,14 +37,14 @@
       <ActionsList
         v-if="sortType === 'difficulty'"
         :categories="towerdata.difficulties"
-        :actions="(diffId: number) => towerdata.actions.filter((el) => roundDiff(el.studs) === diffId).sort((a, b) => (a.studs > b.studs ? 1 : -1))"
+        :actions="getDiffActions"
         :percentage="getDiffPercentage"
         :player-badges="playerBadges"
       />
       <ActionsList
         v-else
         :categories="towerdata.areas"
-        :actions="(areaId: number) => towerdata.actions.filter((el) => el.area === areaId).sort((a, b) => (a.studs > b.studs ? 1 : -1))"
+        :actions="getAreaActions"
         :percentage="getAreaPercentage"
         :player-badges="playerBadges"
       />
@@ -138,28 +138,43 @@ export default {
       this.submitUsername();
     }
   },
-  computed: {
+  /*computed: {
     actions() {
-      return towerdata.actions.filter((el) =>
-        this.playerBadges.includes(el.badge)
-      );
+      return towerdata.actions.sort((a, b) => a.studs - b.studs);
     },
-  },
+    ownedActions() {
+      return towerdata.actions
+        //.filter((el) => this.playerBadges.includes(el.badge))
+        .filter((el) => this.playerBadges.includes(el.badge))
+        .sort((a, b) => a.studs - b.studs); // b-a descending a-b ascending
+    },
+  },*/
   methods: {
+    getPercentage(count: number, total: number) {
+      return ((count / total) * 100 || 0).toFixed(1);
+    },
+    getActions(actions: Action[] = towerdata.actions) {
+      return actions.sort((a, b) => a.studs - b.studs);
+    },
+    getOwnedActions(actions: Action[] = towerdata.actions) {
+      return actions
+        .filter((el) => this.playerBadges.includes(el.badge))
+        .sort((a, b) => a.studs - b.studs);
+    },
+    getAreaActions(areaId: number) {
+      return this.getActions().filter((el) => el.area === areaId);
+    },
+    getDiffActions(diffId: number) {
+      return this.getActions().filter((el) => roundDiff(el.studs) === diffId);
+    },
     getAreaPercentage(areaId: number) {
-      const _totalActions = towerdata.actions.filter(
-        (el) => el.area === areaId
-      );
-      const _ownedActions = _totalActions.filter((el) =>
-        this.playerBadges.includes(el.badge)
-      );
-      const _percentageActions = parseFloat(
-        ((_ownedActions.length / _totalActions.length) * 100 || 0).toString()
-      ).toFixed(1);
+      const _total = this.getAreaActions(areaId);
+      const _owned = this.getOwnedActions(_total);
+      const _percentage = this.getPercentage(_owned.length, _total.length);
 
       return {
-        text: `${_ownedActions.length}/${_totalActions.length} (${_percentageActions}%)`,
-        percentage: _percentageActions,
+        text: `${_owned.length}/${_total.length} (${_percentage}%)`,
+        percentage: _percentage,
       };
 
       //return `${_ownedAreaActions.length}/${
@@ -167,50 +182,34 @@ export default {
       //} (${parseFloat(_percentageAreaActions.toString()).toFixed(1)}%)`;
     },
     getDiffPercentage(diffId: number) {
-      const _totalActions = towerdata.actions.filter(
-        (el) => roundDiff(el.studs) === diffId
-      );
-      const _ownedActions = _totalActions.filter((el) =>
-        this.playerBadges.includes(el.badge)
-      );
-      const _percentageActions = parseFloat(
-        ((_ownedActions.length / _totalActions.length) * 100 || 0).toString()
-      ).toFixed(1);
+      const _total = this.getDiffActions(diffId);
+      const _owned = this.getOwnedActions(_total);
+      const _percentage = this.getPercentage(_owned.length, _total.length);
 
       return {
-        text: `${_ownedActions.length}/${_totalActions.length} (${_percentageActions}%)`,
-        percentage: _percentageActions,
+        text: `${_owned.length}/${_total.length} (${_percentage}%)`,
+        percentage: _percentage,
       };
-      //return `${_ownedDiffActions.length}/${
-      //  _totalDiffActions.length
-      //} (${parseFloat(_percentageDiffActions.toString()).toFixed(1)}%)`;
     },
     getTotalActions() {
-      const _totalActions = towerdata.actions;
-      const _ownedActions = _totalActions.filter((el) =>
-        this.playerBadges.includes(el.badge)
-      );
-      const _percentageActions = parseFloat(
-        ((_ownedActions.length / _totalActions.length) * 100 || 0).toString()
-      ).toFixed(1);
+      const _total = this.getActions();
+      const _owned = this.getOwnedActions();
+      const _percentage = this.getPercentage(_owned.length, _total.length);
 
       return {
-        text: `Total: ${_ownedActions.length}/${_totalActions.length} (${_percentageActions}%)`,
-        percentage: _percentageActions,
+        text: `Total: ${_owned.length}/${_total.length} (${_percentage}%)`,
+        percentage: _percentage,
       };
     },
     getHardestAction() {
-      const _totalActions = towerdata.actions;
-      const _ownedActions = _totalActions.filter((el) =>
-        this.playerBadges.includes(el.badge)
-      );
-      if (_ownedActions.length > 0) {
-        const _hardestAction = _ownedActions.reduce((prev, current) =>
+      const _owned = this.getOwnedActions();
+      if (_owned.length > 0) {
+        const _hardest = _owned.reduce((prev, current) =>
           prev.studs > current.studs ? prev : current
         );
         return {
-          text: `Hardest Completion: ${_hardestAction?.acronym || "N/A"}`,
-          color: getDiffColor(_hardestAction?.studs || 0),
+          text: `Hardest Completion: ${_hardest?.acronym || "N/A"}`,
+          color: getDiffColor(_hardest?.studs || 0),
         };
       } else {
         return {

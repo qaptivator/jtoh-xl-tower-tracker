@@ -1,6 +1,6 @@
 import axios from "axios";
 
-type UserBadgeInfo = {
+export type UserBadgeInfo = {
   badgeId: number;
   awardedDate: Date;
 };

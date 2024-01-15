@@ -1,10 +1,10 @@
 <template>
-  <div class="flex snap-x snap-mandatory w-full overflow-x-auto space-x-4">
+  <div class="flex snap-x snap-mandatory space-x-4 overflow-auto max-h-screen">
     <div
       v-for="(category, categoryId) in categories"
       :key="`category${categoryId}`"
       class="w-80 snap-center shrink-0"
-      style="height: calc(100vh - 320px)"
+      style="height: calc(100vh - 330px)"
     >
       <!--top one had overflow-y-auto-->
       <div class="text-xl text-center border rounded-lg w-full p-3 bg-white">

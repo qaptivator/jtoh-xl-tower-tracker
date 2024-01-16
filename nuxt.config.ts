@@ -20,7 +20,7 @@ export default defineNuxtConfig({
     baseURL: "/jtoh-xl-tower-tracker/",
     buildAssetsDir: "assets",
   },
-  modules: ["@nuxtjs/tailwindcss"],
+  modules: ["@nuxtjs/tailwindcss"], // "@nuxt/test-utils/module"
   css: ["~/assets/css/main.css"],
   postcss: {
     plugins: {

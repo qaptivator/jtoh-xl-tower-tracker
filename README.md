@@ -32,3 +32,5 @@ Tower data hotfix (deployment 4, commit tower data hotfix)
 - [ ] Menu for uncompleted towers
 - [ ] Showing the tower's completion date somewhere
 - [ ] Maybe combine all these things into a single filter menu? (like sort by name, difficulty, locked/unlocked, date of completion, ascending/descending)
+- [ ] RING 4 (when it releases)
+- [ ] Indicator for checking did user even join JXP at all (could be useful for showing that the username is wrong)

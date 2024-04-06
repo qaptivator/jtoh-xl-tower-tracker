@@ -25,3 +25,10 @@ Tower data hotfix (deployment 4, commit tower data hotfix)
 
 - Fixed the CoTC and CoIS difficulty
 - Made the ToFM have the same badge as ToLW, because there isn't a badge for ToFM
+
+## TODO List
+- [ ] Button for showing full name without having to hover over the acronyms
+- [ ] Show locked/unlocked citadels and areas
+- [ ] Menu for uncompleted towers
+- [ ] Showing the tower's completion date somewhere
+- [ ] Maybe combine all these things into a single filter menu? (like sort by name, difficulty, locked/unlocked, date of completion, ascending/descending)

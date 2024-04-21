@@ -1,0 +1,231 @@
+{
+  "resolvedId": "C:/Users/Andrew/Documents/GitHub/jtoh-xl-tower-tracker/utils/tower.ts",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "export function clamp(number: number, min: number, max: number): number {\r\n  return Math.max(min, Math.min(number, max));\r\n}\r\n\r\nexport function roundDiff(difficulty: number): number {\r\n  return Math.floor(Math.max(difficulty - 1, 0));\r\n}\r\n\r\nexport function getDiff(difficulty: number): Difficulty {\r\n  return towerdata.difficulties[roundDiff(difficulty)];\r\n}\r\n\r\nexport function getDiffPrefix(difficulty: number): string {\r\n  const _diff = (Math.max(difficulty - 1, 0) * 100) % 100; // need to do this due to floating point errors\r\n  switch (true) {\r\n    case _diff >= 89:\r\n      return \"Peak\";\r\n    case _diff >= 78:\r\n      return \"High-Peak\";\r\n    case _diff >= 67:\r\n      return \"High\";\r\n    case _diff >= 56:\r\n      return \"Mid-High\";\r\n    case _diff >= 45:\r\n      return \"Mid\";\r\n    case _diff >= 33:\r\n      return \"Low-Mid\";\r\n    case _diff >= 22:\r\n      return \"Low\";\r\n    case _diff >= 11:\r\n      return \"Bottom-Low\";\r\n    case _diff >= 1:\r\n      return \"Bottom\";\r\n    default:\r\n      return \"Baseline\";\r\n  }\r\n}\r\n\r\nexport function getDiffColor(difficulty: number): string {\r\n  return getDiff(difficulty).color;\r\n}\r\n",
+      "start": 1705353510591,
+      "end": 1705353510933,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1705353510933,
+      "end": 1705353510933,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1705353510933,
+      "end": 1705353510933,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1705353510933,
+      "end": 1705353510933,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1705353510933,
+      "end": 1705353510933,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "result": "export function clamp(number, min, max) {\n  return Math.max(min, Math.min(number, max));\n}\nexport function roundDiff(difficulty) {\n  return Math.floor(Math.max(difficulty - 1, 0));\n}\nexport function getDiff(difficulty) {\n  return towerdata.difficulties[roundDiff(difficulty)];\n}\nexport function getDiffPrefix(difficulty) {\n  const _diff = Math.max(difficulty - 1, 0) * 100 % 100;\n  switch (true) {\n    case _diff >= 89:\n      return \"Peak\";\n    case _diff >= 78:\n      return \"High-Peak\";\n    case _diff >= 67:\n      return \"High\";\n    case _diff >= 56:\n      return \"Mid-High\";\n    case _diff >= 45:\n      return \"Mid\";\n    case _diff >= 33:\n      return \"Low-Mid\";\n    case _diff >= 22:\n      return \"Low\";\n    case _diff >= 11:\n      return \"Bottom-Low\";\n    case _diff >= 1:\n      return \"Bottom\";\n    default:\n      return \"Baseline\";\n  }\n}\nexport function getDiffColor(difficulty) {\n  return getDiff(difficulty).color;\n}\n",
+      "start": 1705353510933,
+      "end": 1705353511001,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "C:/Users/Andrew/Documents/GitHub/jtoh-xl-tower-tracker/utils/tower.ts"
+        ],
+        "sourcesContent": [
+          "export function clamp(number: number, min: number, max: number): number {\r\n  return Math.max(min, Math.min(number, max));\r\n}\r\n\r\nexport function roundDiff(difficulty: number): number {\r\n  return Math.floor(Math.max(difficulty - 1, 0));\r\n}\r\n\r\nexport function getDiff(difficulty: number): Difficulty {\r\n  return towerdata.difficulties[roundDiff(difficulty)];\r\n}\r\n\r\nexport function getDiffPrefix(difficulty: number): string {\r\n  const _diff = (Math.max(difficulty - 1, 0) * 100) % 100; // need to do this due to floating point errors\r\n  switch (true) {\r\n    case _diff >= 89:\r\n      return \"Peak\";\r\n    case _diff >= 78:\r\n      return \"High-Peak\";\r\n    case _diff >= 67:\r\n      return \"High\";\r\n    case _diff >= 56:\r\n      return \"Mid-High\";\r\n    case _diff >= 45:\r\n      return \"Mid\";\r\n    case _diff >= 33:\r\n      return \"Low-Mid\";\r\n    case _diff >= 22:\r\n      return \"Low\";\r\n    case _diff >= 11:\r\n      return \"Bottom-Low\";\r\n    case _diff >= 1:\r\n      return \"Bottom\";\r\n    default:\r\n      return \"Baseline\";\r\n  }\r\n}\r\n\r\nexport function getDiffColor(difficulty: number): string {\r\n  return getDiff(difficulty).color;\r\n}\r\n"
+        ],
+        "mappings": "AAAO,gBAAS,MAAM,QAAgB,KAAa,KAAqB;AACtE,SAAO,KAAK,IAAI,KAAK,KAAK,IAAI,QAAQ,GAAG,CAAC;AAC5C;AAEO,gBAAS,UAAU,YAA4B;AACpD,SAAO,KAAK,MAAM,KAAK,IAAI,aAAa,GAAG,CAAC,CAAC;AAC/C;AAEO,gBAAS,QAAQ,YAAgC;AACtD,SAAO,UAAU,aAAa,UAAU,UAAU,CAAC;AACrD;AAEO,gBAAS,cAAc,YAA4B;AACxD,QAAM,QAAS,KAAK,IAAI,aAAa,GAAG,CAAC,IAAI,MAAO;AACpD,UAAQ,MAAM;AAAA,IACZ,KAAK,SAAS;AACZ,aAAO;AAAA,IACT,KAAK,SAAS;AACZ,aAAO;AAAA,IACT,KAAK,SAAS;AACZ,aAAO;AAAA,IACT,KAAK,SAAS;AACZ,aAAO;AAAA,IACT,KAAK,SAAS;AACZ,aAAO;AAAA,IACT,KAAK,SAAS;AACZ,aAAO;AAAA,IACT,KAAK,SAAS;AACZ,aAAO;AAAA,IACT,KAAK,SAAS;AACZ,aAAO;AAAA,IACT,KAAK,SAAS;AACZ,aAAO;AAAA,IACT;AACE,aAAO;AAAA,EACX;AACF;AAEO,gBAAS,aAAa,YAA4B;AACvD,SAAO,QAAQ,UAAU,EAAE;AAC7B;",
+        "names": []
+      }
+    },
+    {
+      "name": "vite:json",
+      "start": 1705353511001,
+      "end": 1705353511001,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1705353511001,
+      "end": 1705353511001,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1705353511001,
+      "end": 1705353511002,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1705353511002,
+      "end": 1705353511002,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1705353511002,
+      "end": 1705353511002,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1705353511002,
+      "end": 1705353511002,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1705353511002,
+      "end": 1705353511002,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1705353511002,
+      "end": 1705353511003,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1705353511003,
+      "end": 1705353511003,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1705353511003,
+      "end": 1705353511003,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1705353511003,
+      "end": 1705353511004,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1705353511004,
+      "end": 1705353511004,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1705353511004,
+      "end": 1705353511004,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1705353511004,
+      "end": 1705353511004,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1705353511004,
+      "end": 1705353511004,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1705353511004,
+      "end": 1705353511004,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1705353511004,
+      "end": 1705353511004,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1705353511004,
+      "end": 1705353511004,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1705353511004,
+      "end": 1705353511005,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "result": "import { towerdata } from 'C:/Users/Andrew/Documents/GitHub/jtoh-xl-tower-tracker/utils/towerdata.ts';\nexport function clamp(number, min, max) {\n  return Math.max(min, Math.min(number, max));\n}\nexport function roundDiff(difficulty) {\n  return Math.floor(Math.max(difficulty - 1, 0));\n}\nexport function getDiff(difficulty) {\n  return towerdata.difficulties[roundDiff(difficulty)];\n}\nexport function getDiffPrefix(difficulty) {\n  const _diff = Math.max(difficulty - 1, 0) * 100 % 100;\n  switch (true) {\n    case _diff >= 89:\n      return \"Peak\";\n    case _diff >= 78:\n      return \"High-Peak\";\n    case _diff >= 67:\n      return \"High\";\n    case _diff >= 56:\n      return \"Mid-High\";\n    case _diff >= 45:\n      return \"Mid\";\n    case _diff >= 33:\n      return \"Low-Mid\";\n    case _diff >= 22:\n      return \"Low\";\n    case _diff >= 11:\n      return \"Bottom-Low\";\n    case _diff >= 1:\n      return \"Bottom\";\n    default:\n      return \"Baseline\";\n  }\n}\nexport function getDiffColor(difficulty) {\n  return getDiff(difficulty).color;\n}\n",
+      "start": 1705353511005,
+      "end": 1705353511008,
+      "order": "post",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": ";AAAA,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACzC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC9C,CAAC;AACD,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACvC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACjD,CAAC;AACD,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACrC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACvD,CAAC;AACD,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC3C,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACxD,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACjB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACrB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACpB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACrB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACzB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACrB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACpB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACrB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACxB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACrB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACnB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACrB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACvB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACrB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACnB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACrB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC1B,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACpB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACtB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACZ,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACxB,CAAC,CAAC,CAAC;AACH,CAAC;AACD,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC1C,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACnC,CAAC;"
+      }
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1705353511009,
+      "end": 1705353511009,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1705353511009,
+      "end": 1705353511009,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1705353511009,
+      "end": 1705353511009,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1705353511009,
+      "end": 1705353511009,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1705353511010,
+      "end": 1705353511010,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1705353511010,
+      "end": 1705353511010,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1705353511010,
+      "end": 1705353511010,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1705353511010,
+      "end": 1705353511010,
+      "order": "normal"
+    }
+  ]
+}

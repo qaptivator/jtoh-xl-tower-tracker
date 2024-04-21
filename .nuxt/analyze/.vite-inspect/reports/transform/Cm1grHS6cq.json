@@ -1,0 +1,212 @@
+{
+  "resolvedId": "virtual:nuxt:C:/Users/Andrew/Documents/GitHub/jtoh-xl-tower-tracker/.nuxt/routes.mjs",
+  "transforms": [
+    {
+      "name": "virtual",
+      "result": "import { default as indexejYPyks1gtMeta } from \"C:/Users/Andrew/Documents/GitHub/jtoh-xl-tower-tracker/pages/index.vue?macro=true\";\nexport default [\n  {\n    name: indexejYPyks1gtMeta?.name ?? \"index\",\n    path: indexejYPyks1gtMeta?.path ?? \"/\",\n    meta: indexejYPyks1gtMeta || {},\n    alias: indexejYPyks1gtMeta?.alias || [],\n    redirect: indexejYPyks1gtMeta?.redirect || undefined,\n    component: () => import(\"C:/Users/Andrew/Documents/GitHub/jtoh-xl-tower-tracker/pages/index.vue\").then(m => m.default || m)\n  }\n]",
+      "start": 1705353507402,
+      "end": 1705353507402,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1705353507403,
+      "end": 1705353507403,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1705353507403,
+      "end": 1705353507403,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1705353507403,
+      "end": 1705353507403,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1705353507403,
+      "end": 1705353507403,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1705353507403,
+      "end": 1705353507403,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1705353507403,
+      "end": 1705353507403,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1705353507404,
+      "end": 1705353507404,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1705353507404,
+      "end": 1705353507404,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1705353507404,
+      "end": 1705353507404,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1705353507404,
+      "end": 1705353507404,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1705353507404,
+      "end": 1705353507404,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1705353507404,
+      "end": 1705353507404,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1705353507404,
+      "end": 1705353507404,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1705353507404,
+      "end": 1705353507404,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1705353507404,
+      "end": 1705353507404,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1705353507404,
+      "end": 1705353507404,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1705353507404,
+      "end": 1705353507404,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1705353507405,
+      "end": 1705353507405,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1705353507405,
+      "end": 1705353507405,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1705353507405,
+      "end": 1705353507405,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1705353507405,
+      "end": 1705353507405,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1705353507405,
+      "end": 1705353507406,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1705353507406,
+      "end": 1705353507406,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1705353507406,
+      "end": 1705353507406,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1705353507406,
+      "end": 1705353507408,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1705353507408,
+      "end": 1705353507408,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1705353507408,
+      "end": 1705353507408,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1705353507409,
+      "end": 1705353507409,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1705353507409,
+      "end": 1705353507409,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1705353507409,
+      "end": 1705353507409,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1705353507409,
+      "end": 1705353507409,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "result": "import { __vitePreload } from \"\u0000vite/preload-helper.js\";import { default as indexejYPyks1gtMeta } from \"C:/Users/Andrew/Documents/GitHub/jtoh-xl-tower-tracker/pages/index.vue?macro=true\";\nexport default [\n  {\n    name: indexejYPyks1gtMeta?.name ?? \"index\",\n    path: indexejYPyks1gtMeta?.path ?? \"/\",\n    meta: indexejYPyks1gtMeta || {},\n    alias: indexejYPyks1gtMeta?.alias || [],\n    redirect: indexejYPyks1gtMeta?.redirect || undefined,\n    component: () => __vitePreload(() => import(\"C:/Users/Andrew/Documents/GitHub/jtoh-xl-tower-tracker/pages/index.vue\"),__VITE_IS_MODERN__?\"__VITE_PRELOAD__\":void 0,import.meta.url).then(m => m.default || m)\n  }\n]",
+      "start": 1705353507410,
+      "end": 1705353507410,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1705353507410,
+      "end": 1705353507410,
+      "order": "normal"
+    }
+  ]
+}

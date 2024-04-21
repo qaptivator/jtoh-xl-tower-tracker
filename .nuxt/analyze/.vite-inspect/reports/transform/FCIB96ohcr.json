@@ -1,0 +1,215 @@
+{
+  "resolvedId": "C:/Users/Andrew/Documents/GitHub/jtoh-xl-tower-tracker/components/ActionsList.vue",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\r\n  <div class=\"flex snap-x snap-mandatory space-x-4 overflow-auto max-h-screen\">\r\n    <div\r\n      v-for=\"(category, categoryId) in categories\"\r\n      :key=\"`category${categoryId}`\"\r\n      class=\"w-80 snap-center shrink-0\"\r\n      style=\"height: calc(100vh - 330px)\"\r\n    >\r\n      <!--top one had overflow-y-auto-->\r\n      <div class=\"text-xl text-center border rounded-lg w-full p-3 bg-white\">\r\n        {{ category.name }}\r\n      </div>\r\n      <div class=\"w-full rounded-lg p-2 space-y-2\">\r\n        <div\r\n          class=\"relative w-full rounded-xl p-1 text-center bg-gray-200\"\r\n          style=\"height: 32px\"\r\n        >\r\n          <div\r\n            class=\"rounded-lg h-full bg-green-400\"\r\n            :style=\"{\r\n              width: `${percentage(categoryId).percentage}%`,\r\n            }\"\r\n          >\r\n            <span class=\"absolute block w-full text-black\">\r\n              {{ percentage(categoryId).text }}\r\n            </span>\r\n          </div>\r\n        </div>\r\n        <div\r\n          v-for=\"(action, actionId) in actions(categoryId)\"\r\n          :key=\"`action${actionId}`\"\r\n        >\r\n          <ActionCard :action=\"action\" :player-badges=\"playerBadges\" />\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</template>\r\n<script lang=\"ts\">\r\nexport default {\r\n  name: \"ActionsList\",\r\n  props: {\r\n    categories: {\r\n      type: Array as PropType<any[]>,\r\n      required: true,\r\n    },\r\n    playerBadges: {\r\n      type: Array as PropType<number[]>,\r\n      required: true,\r\n    },\r\n    actions: {\r\n      type: Function,\r\n      required: true,\r\n    },\r\n    percentage: {\r\n      type: Function,\r\n      required: true,\r\n    },\r\n  },\r\n};\r\n</script>\r\n",
+      "start": 1705353510373,
+      "end": 1705353510612,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1705353510612,
+      "end": 1705353510612,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1705353510612,
+      "end": 1705353510612,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1705353510612,
+      "end": 1705353510612,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1705353510612,
+      "end": 1705353510612,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1705353510612,
+      "end": 1705353510612,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1705353510612,
+      "end": 1705353510612,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1705353510612,
+      "end": 1705353510612,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import _sfc_main from \"C:/Users/Andrew/Documents/GitHub/jtoh-xl-tower-tracker/components/ActionsList.vue?vue&type=script&lang.ts\";\nexport * from \"C:/Users/Andrew/Documents/GitHub/jtoh-xl-tower-tracker/components/ActionsList.vue?vue&type=script&lang.ts\";\nimport { renderList as _renderList, Fragment as _Fragment, openBlock as _openBlock, createElementBlock as _createElementBlock, toDisplayString as _toDisplayString, createElementVNode as _createElementVNode, normalizeStyle as _normalizeStyle, resolveComponent as _resolveComponent, createVNode as _createVNode } from \"vue\";\nconst _hoisted_1 = { class: \"flex snap-x snap-mandatory space-x-4 overflow-auto max-h-screen\" };\nconst _hoisted_2 = { class: \"text-xl text-center border rounded-lg w-full p-3 bg-white\" };\nconst _hoisted_3 = { class: \"w-full rounded-lg p-2 space-y-2\" };\nconst _hoisted_4 = {\n  class: \"relative w-full rounded-xl p-1 text-center bg-gray-200\",\n  style: { \"height\": \"32px\" }\n};\nconst _hoisted_5 = { class: \"absolute block w-full text-black\" };\nfunction _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {\n  const _component_ActionCard = _resolveComponent(\"ActionCard\");\n  return _openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n    (_openBlock(true), _createElementBlock(_Fragment, null, _renderList($props.categories, (category, categoryId) => {\n      return _openBlock(), _createElementBlock(\"div\", {\n        key: `category${categoryId}`,\n        class: \"w-80 snap-center shrink-0\",\n        style: { \"height\": \"calc(100vh - 330px)\" }\n      }, [\n        _createElementVNode(\"div\", _hoisted_2, _toDisplayString(category.name), 1),\n        _createElementVNode(\"div\", _hoisted_3, [\n          _createElementVNode(\"div\", _hoisted_4, [\n            _createElementVNode(\"div\", {\n              class: \"rounded-lg h-full bg-green-400\",\n              style: _normalizeStyle({\n                width: `${$props.percentage(categoryId).percentage}%`\n              })\n            }, [\n              _createElementVNode(\"span\", _hoisted_5, _toDisplayString($props.percentage(categoryId).text), 1)\n            ], 4)\n          ]),\n          (_openBlock(true), _createElementBlock(_Fragment, null, _renderList($props.actions(categoryId), (action, actionId) => {\n            return _openBlock(), _createElementBlock(\"div\", {\n              key: `action${actionId}`\n            }, [\n              _createVNode(_component_ActionCard, {\n                action,\n                \"player-badges\": $props.playerBadges\n              }, null, 8, [\"action\", \"player-badges\"])\n            ]);\n          }), 128))\n        ])\n      ]);\n    }), 128))\n  ]);\n}\nimport _export_sfc from \"\\0plugin-vue:export-helper\";\nexport default /* @__PURE__ */ _export_sfc(_sfc_main, [[\"render\", _sfc_render]]);\n",
+      "start": 1705353510612,
+      "end": 1705353510914,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1705353510914,
+      "end": 1705353510914,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1705353510914,
+      "end": 1705353510914,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1705353510914,
+      "end": 1705353510914,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1705353510914,
+      "end": 1705353510914,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1705353510914,
+      "end": 1705353510914,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1705353510914,
+      "end": 1705353510914,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1705353510914,
+      "end": 1705353510914,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1705353510914,
+      "end": 1705353510914,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1705353510915,
+      "end": 1705353510915,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1705353510915,
+      "end": 1705353510915,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1705353510915,
+      "end": 1705353510915,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1705353510915,
+      "end": 1705353510915,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1705353510915,
+      "end": 1705353510915,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1705353510915,
+      "end": 1705353510915,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1705353510915,
+      "end": 1705353510915,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1705353510915,
+      "end": 1705353510915,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1705353510915,
+      "end": 1705353510917,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1705353510917,
+      "end": 1705353510917,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1705353510924,
+      "end": 1705353510924,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1705353510928,
+      "end": 1705353510928,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1705353510928,
+      "end": 1705353510928,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "result": "import { default as __nuxt_component_0 } from \"C:/Users/Andrew/Documents/GitHub/jtoh-xl-tower-tracker/components/ActionCard.vue\";\nimport _sfc_main from \"C:/Users/Andrew/Documents/GitHub/jtoh-xl-tower-tracker/components/ActionsList.vue?vue&type=script&lang.ts\";\nexport * from \"C:/Users/Andrew/Documents/GitHub/jtoh-xl-tower-tracker/components/ActionsList.vue?vue&type=script&lang.ts\";\nimport { renderList as _renderList, Fragment as _Fragment, openBlock as _openBlock, createElementBlock as _createElementBlock, toDisplayString as _toDisplayString, createElementVNode as _createElementVNode, normalizeStyle as _normalizeStyle, resolveComponent as _resolveComponent, createVNode as _createVNode } from \"vue\";\nconst _hoisted_1 = { class: \"flex snap-x snap-mandatory space-x-4 overflow-auto max-h-screen\" };\nconst _hoisted_2 = { class: \"text-xl text-center border rounded-lg w-full p-3 bg-white\" };\nconst _hoisted_3 = { class: \"w-full rounded-lg p-2 space-y-2\" };\nconst _hoisted_4 = {\n  class: \"relative w-full rounded-xl p-1 text-center bg-gray-200\",\n  style: { \"height\": \"32px\" }\n};\nconst _hoisted_5 = { class: \"absolute block w-full text-black\" };\nfunction _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {\n  const _component_ActionCard = __nuxt_component_0;\n  return _openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n    (_openBlock(true), _createElementBlock(_Fragment, null, _renderList($props.categories, (category, categoryId) => {\n      return _openBlock(), _createElementBlock(\"div\", {\n        key: `category${categoryId}`,\n        class: \"w-80 snap-center shrink-0\",\n        style: { \"height\": \"calc(100vh - 330px)\" }\n      }, [\n        _createElementVNode(\"div\", _hoisted_2, _toDisplayString(category.name), 1),\n        _createElementVNode(\"div\", _hoisted_3, [\n          _createElementVNode(\"div\", _hoisted_4, [\n            _createElementVNode(\"div\", {\n              class: \"rounded-lg h-full bg-green-400\",\n              style: _normalizeStyle({\n                width: `${$props.percentage(categoryId).percentage}%`\n              })\n            }, [\n              _createElementVNode(\"span\", _hoisted_5, _toDisplayString($props.percentage(categoryId).text), 1)\n            ], 4)\n          ]),\n          (_openBlock(true), _createElementBlock(_Fragment, null, _renderList($props.actions(categoryId), (action, actionId) => {\n            return _openBlock(), _createElementBlock(\"div\", {\n              key: `action${actionId}`\n            }, [\n              _createVNode(_component_ActionCard, {\n                action,\n                \"player-badges\": $props.playerBadges\n              }, null, 8, [\"action\", \"player-badges\"])\n            ]);\n          }), 128))\n        ])\n      ]);\n    }), 128))\n  ]);\n}\nimport _export_sfc from \"\\0plugin-vue:export-helper\";\nexport default /* @__PURE__ */ _export_sfc(_sfc_main, [[\"render\", _sfc_render]]);\n",
+      "start": 1705353510928,
+      "end": 1705353510928,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1705353510929,
+      "end": 1705353510929,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1705353510929,
+      "end": 1705353510929,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1705353510929,
+      "end": 1705353510929,
+      "order": "normal"
+    }
+  ]
+}

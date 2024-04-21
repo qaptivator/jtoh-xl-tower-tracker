@@ -1,0 +1,221 @@
+{
+  "resolvedId": "C:/Users/Andrew/Documents/GitHub/jtoh-xl-tower-tracker/app.vue?vue&type=script&lang.ts",
+  "transforms": [
+    {
+      "name": "vite:vue",
+      "result": "\nexport default {\n  name: \"AppPage\",\n  mounted() {\n    this.updateDarkmode();\n  },\n  computed: {\n    darkmode: {\n      get() {\n        return (\n          localStorage.getItem(\"dark-theme\") === \"true\" ||\n          (!(\"dark-theme\" in localStorage) &&\n            window.matchMedia(\"(prefers-color-scheme: dark)\").matches)\n        );\n      },\n      set(v: any) {\n        console.log(v);\n        localStorage.setItem(\"dark-mode\", (!!v).toString());\n        this.updateDarkmode();\n      },\n    },\n  },\n  methods: {\n    goto(to: any) {\n      this.$router.push(to);\n    },\n    updateDarkmode() {\n      if (this.darkmode) {\n        document.documentElement.classList.add(\"dark\");\n      } else {\n        document.documentElement.classList.remove(\"dark\");\n      }\n    },\n    toggleDarkmode() {\n      console.log(this.darkmode, \"before\");\n      this.darkmode = !this.darkmode;\n      console.log(this.darkmode, \"after\");\n    },\n  },\n};\n",
+      "start": 1705353510528,
+      "end": 1705353510528
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1705353510529,
+      "end": 1705353510529,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1705353510529,
+      "end": 1705353510529,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1705353510529,
+      "end": 1705353510529,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1705353510529,
+      "end": 1705353510529,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "result": "export default {\n  name: \"AppPage\",\n  mounted() {\n    this.updateDarkmode();\n  },\n  computed: {\n    darkmode: {\n      get() {\n        return localStorage.getItem(\"dark-theme\") === \"true\" || !(\"dark-theme\" in localStorage) && window.matchMedia(\"(prefers-color-scheme: dark)\").matches;\n      },\n      set(v) {\n        console.log(v);\n        localStorage.setItem(\"dark-mode\", (!!v).toString());\n        this.updateDarkmode();\n      }\n    }\n  },\n  methods: {\n    goto(to) {\n      this.$router.push(to);\n    },\n    updateDarkmode() {\n      if (this.darkmode) {\n        document.documentElement.classList.add(\"dark\");\n      } else {\n        document.documentElement.classList.remove(\"dark\");\n      }\n    },\n    toggleDarkmode() {\n      console.log(this.darkmode, \"before\");\n      this.darkmode = !this.darkmode;\n      console.log(this.darkmode, \"after\");\n    }\n  }\n};\n",
+      "start": 1705353510529,
+      "end": 1705353510609,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "C:/Users/Andrew/Documents/GitHub/jtoh-xl-tower-tracker/app.vue?vue&type=script&lang.ts"
+        ],
+        "sourcesContent": [
+          "\nexport default {\n  name: \"AppPage\",\n  mounted() {\n    this.updateDarkmode();\n  },\n  computed: {\n    darkmode: {\n      get() {\n        return (\n          localStorage.getItem(\"dark-theme\") === \"true\" ||\n          (!(\"dark-theme\" in localStorage) &&\n            window.matchMedia(\"(prefers-color-scheme: dark)\").matches)\n        );\n      },\n      set(v: any) {\n        console.log(v);\n        localStorage.setItem(\"dark-mode\", (!!v).toString());\n        this.updateDarkmode();\n      },\n    },\n  },\n  methods: {\n    goto(to: any) {\n      this.$router.push(to);\n    },\n    updateDarkmode() {\n      if (this.darkmode) {\n        document.documentElement.classList.add(\"dark\");\n      } else {\n        document.documentElement.classList.remove(\"dark\");\n      }\n    },\n    toggleDarkmode() {\n      console.log(this.darkmode, \"before\");\n      this.darkmode = !this.darkmode;\n      console.log(this.darkmode, \"after\");\n    },\n  },\n};\n"
+        ],
+        "mappings": "AACA,eAAe;AAAA,EACb,MAAM;AAAA,EACN,UAAU;AACR,SAAK,eAAe;AAAA,EACtB;AAAA,EACA,UAAU;AAAA,IACR,UAAU;AAAA,MACR,MAAM;AACJ,eACE,aAAa,QAAQ,YAAY,MAAM,UACtC,EAAE,gBAAgB,iBACjB,OAAO,WAAW,8BAA8B,EAAE;AAAA,MAExD;AAAA,MACA,IAAI,GAAQ;AACV,gBAAQ,IAAI,CAAC;AACb,qBAAa,QAAQ,cAAc,CAAC,CAAC,GAAG,SAAS,CAAC;AAClD,aAAK,eAAe;AAAA,MACtB;AAAA,IACF;AAAA,EACF;AAAA,EACA,SAAS;AAAA,IACP,KAAK,IAAS;AACZ,WAAK,QAAQ,KAAK,EAAE;AAAA,IACtB;AAAA,IACA,iBAAiB;AACf,UAAI,KAAK,UAAU;AACjB,iBAAS,gBAAgB,UAAU,IAAI,MAAM;AAAA,MAC/C,OAAO;AACL,iBAAS,gBAAgB,UAAU,OAAO,MAAM;AAAA,MAClD;AAAA,IACF;AAAA,IACA,iBAAiB;AACf,cAAQ,IAAI,KAAK,UAAU,QAAQ;AACnC,WAAK,WAAW,CAAC,KAAK;AACtB,cAAQ,IAAI,KAAK,UAAU,OAAO;AAAA,IACpC;AAAA,EACF;AACF;",
+        "names": []
+      }
+    },
+    {
+      "name": "vite:json",
+      "start": 1705353510609,
+      "end": 1705353510609,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1705353510609,
+      "end": 1705353510609,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1705353510609,
+      "end": 1705353510609,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1705353510609,
+      "end": 1705353510609,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1705353510609,
+      "end": 1705353510609,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1705353510609,
+      "end": 1705353510609,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1705353510609,
+      "end": 1705353510609,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1705353510609,
+      "end": 1705353510609,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1705353510609,
+      "end": 1705353510609,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1705353510609,
+      "end": 1705353510609,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1705353510609,
+      "end": 1705353510609,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1705353510609,
+      "end": 1705353510609,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1705353510609,
+      "end": 1705353510609,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1705353510609,
+      "end": 1705353510609,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1705353510609,
+      "end": 1705353510609,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1705353510609,
+      "end": 1705353510609,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1705353510609,
+      "end": 1705353510609,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1705353510609,
+      "end": 1705353510609,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1705353510609,
+      "end": 1705353510610,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1705353510610,
+      "end": 1705353510611,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1705353510611,
+      "end": 1705353510611,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1705353510611,
+      "end": 1705353510611,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1705353510611,
+      "end": 1705353510611,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1705353510611,
+      "end": 1705353510611,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1705353510611,
+      "end": 1705353510612,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1705353510612,
+      "end": 1705353510612,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1705353510612,
+      "end": 1705353510612,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1705353510612,
+      "end": 1705353510612,
+      "order": "normal"
+    }
+  ]
+}

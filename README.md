@@ -26,11 +26,19 @@ Tower data hotfix (deployment 4, commit tower data hotfix)
 - Fixed the CoTC and CoIS difficulty
 - Made the ToFM have the same badge as ToLW, because there isn't a badge for ToFM
 
+### v0.1.2
+
+Ring 4 towers (deployment 5, commit ring 4 update)
+
+- Added new citadels from Ring 4
+
 ## TODO List
+
 - [ ] Button for showing full name without having to hover over the acronyms
 - [ ] Show locked/unlocked citadels and areas
 - [ ] Menu for uncompleted towers
 - [ ] Showing the tower's completion date somewhere
 - [ ] Maybe combine all these things into a single filter menu? (like sort by name, difficulty, locked/unlocked, date of completion, ascending/descending)
-- [ ] RING 4 (when it releases)
+- [x] RING 4 (when it releases)
 - [ ] Indicator for checking did user even join JXP at all (could be useful for showing that the username is wrong)
+- [ ] Dark mode

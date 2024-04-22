@@ -43,4 +43,4 @@ Ring 4 towers (deployment 5-6, commit ring 4 update)
 - [ ] Indicator for checking did user even join JXP at all (could be useful for showing that the username is wrong)
 - [ ] Dark mode
 - [ ] Fix the catastrophic and terrifying difficulty texts being barely visible on white background (add a stroke around them)
-- [ ] Improve the page routing (instead of using a single page and a query for username, have two different pages: one with input and other one with dynamic routing
+- [ ] Improve the page routing (instead of using a single page and a query for username, have two different pages: one with input and other one with dynamic routing (turns out it's not really possible on static websites (with nuxt generate))

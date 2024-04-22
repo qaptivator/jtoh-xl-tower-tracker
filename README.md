@@ -28,7 +28,7 @@ Tower data hotfix (deployment 4, commit tower data hotfix)
 
 ### v0.1.2
 
-Ring 4 towers (deployment 5, commit ring 4 update)
+Ring 4 towers (deployment 5-6, commit ring 4 update)
 
 - Added new citadels from Ring 4
 

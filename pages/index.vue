@@ -1,8 +1,15 @@
 <template>
   <div class="h-full flex justify-center">
     <div v-if="submitted" class="w-full h-full max-w-4xl">
-      <div class="mt-20 text-center text-xl mb-1">
+      <div class="mt-20 text-center text-xl mb-1 dark:text-emerald-300">
         {{ `${username}'s Tower Completions` }}
+      </div>
+      <div
+        v-if="!playerJoinedGame"
+        class="mt-30 text-center text-md mb-1 text-red-400"
+      >
+        This player had never joined JToH XL Project, there could be a spelling
+        issue in the username
       </div>
       <div class="w-full flex justify-center mb-4 p-4 space-x-6">
         <!--<button
@@ -127,6 +134,7 @@ export default {
       sortType: "area",
       mostRecentAction: null as any,
       playerBadges: [] as number[],
+      playerJoinedGame: false as boolean,
       submitted: false,
       loading: false,
     };
@@ -239,6 +247,7 @@ export default {
     },
     async submitUsername() {
       if (this.isBlank(this.username)) return;
+      this.playerJoinedGame = false;
 
       this.formError = "";
       this.$router.push({
@@ -247,12 +256,29 @@ export default {
       });
 
       this.loading = true;
-      const id = await getIdFromUsername(this.username);
+      const [id, idRequestError] = await getIdFromUsername(this.username);
+
+      if (idRequestError) {
+        this.loading = false;
+        this.formError = "Roblox API error occured, try again later";
+        console.log(`Network error at getIdFromUsername`);
+        return;
+      }
+
       if (id) {
-        const timestamps = await getBadgeAwardedTimestampts(
-          id,
-          towerdata.actions.map((el: any) => el.badge)
-        );
+        // tower badges
+        const [timestamps, badgesRequestError] =
+          await getBadgeAwardedTimestampts(
+            id,
+            towerdata.actions.map((el: any) => el.badge)
+          );
+
+        if (badgesRequestError) {
+          this.loading = false;
+          this.formError = "Roblox API error occured, try again later";
+          console.log(`Network error at getBadgeAwardedTimestampts actions`);
+          return;
+        }
 
         if (timestamps.length > 0) {
           const mostRecentBadge = timestamps.reduce((prev, current) =>
@@ -266,6 +292,23 @@ export default {
             (el) => el.badge === mostRecentBadge
           )[0];
         }
+
+        // joined badge
+
+        const [joinedTimestamps, joinedRequestError] =
+          await getBadgeAwardedTimestampts(id, towerdata.joinedBadgeId);
+
+        if (joinedRequestError) {
+          this.loading = false;
+          this.formError = "Roblox API error occured, try again later";
+          console.log(`Network error at getBadgeAwardedTimestampts joined`);
+          return;
+        }
+
+        if (joinedTimestamps.length > 0) {
+          this.playerJoinedGame = true;
+        }
+
         this.loading = false;
         this.submitted = true;
       } else {

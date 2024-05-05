@@ -44,6 +44,7 @@ export type Action = {
 };
 
 export type TowerData = {
+  joinedBadgeId: number;
   difficulties: Difficulty[];
   worlds: string[];
   areas: Area[];
@@ -51,6 +52,7 @@ export type TowerData = {
 };
 
 export const towerdata = {
+  joinedBadgeId: 2144508191,
   difficulties: [
     {
       name: "Easy",
@@ -58,7 +60,7 @@ export const towerdata = {
     },
     {
       name: "Medium",
-      color: "text-yellow-300",
+      color: "text-yellow-400",
     },
     {
       name: "Hard",
@@ -94,7 +96,7 @@ export const towerdata = {
     },
     {
       name: "Catastrophic",
-      color: "text-white",
+      color: "text-white font-outline-1",
     },
   ],
   worlds: ["The Great Inferno", "Spatial System"],

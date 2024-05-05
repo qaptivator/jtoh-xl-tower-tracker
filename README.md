@@ -32,6 +32,15 @@ Ring 4 towers (deployment 5-6, commit ring 4 update)
 
 - Added new citadels from Ring 4
 
+### v0.1.3
+
+Small visual changes (deployment 7, commit small visual changes)
+
+- Added text what is shown when user have never joined JXP even once (useful for showing a possibility that username spelling is wrong)
+- Fixed the catastrophic text being barely visible by adding a black stroke around it
+- Added an error message, when error occurs while obtaining Roblox data
+- Fixed the favicon.ico
+
 ## TODO List
 
 - [ ] Button for showing full name without having to hover over the acronyms
@@ -40,7 +49,8 @@ Ring 4 towers (deployment 5-6, commit ring 4 update)
 - [ ] Showing the tower's completion date somewhere
 - [ ] Maybe combine all these things into a single filter menu? (like sort by name, difficulty, locked/unlocked, date of completion, ascending/descending)
 - [x] RING 4 (when it releases)
-- [ ] Indicator for checking did user even join JXP at all (could be useful for showing that the username is wrong)
-- [ ] Dark mode
-- [ ] Fix the catastrophic and terrifying difficulty texts being barely visible on white background (add a stroke around them)
+- [x] Indicator for checking did user even join JXP at all (could be useful for showing that the username is wrong)
+- [ ] Dark mode (i tried making it several times but it just doesn't want to work)
+- [x] Fix the catastrophic and terrifying difficulty texts being barely visible on white background (add a stroke around them)
+- [ ] Text for showing current version + centralized version variable
 - [ ] Improve the page routing (instead of using a single page and a query for username, have two different pages: one with input and other one with dynamic routing (turns out it's not really possible on static websites (with nuxt generate))

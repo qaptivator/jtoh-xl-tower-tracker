@@ -33,10 +33,16 @@ export default {
     },
   },
   plugins: [],
+  //darkMode: "selector",
   safelist: [
     {
       pattern:
         /(text)-(transparent|current|easy|medium|hard|difficult|challenging|intense|remorseless|insane|extreme|terrifying|catastrophic)/,
     },
+    "font-outline-1",
+    "font-outline-2",
+    "font-outline-4",
+    "bg-black",
+    "bg-white",
   ],
 };

@@ -1,7 +1,7 @@
 <template>
   <NuxtLoadingIndicator />
-  <div class="w-full h-full">
-    <div class="fixed w-full h-full top-0 right-0 -z-50 bg-gray-50" />
+  <div class="w-full h-full dark">
+    <div class="fixed w-full h-full top-0 right-0 -z-50 bg-gray-50 bg-black" />
     <div
       class="fixed top-0 right-0 z-40 flex border-b w-full items-center p-2 bg-white"
     >
@@ -65,10 +65,10 @@
 export default {
   name: "AppPage",
   mounted() {
-    this.updateDarkmode();
+    //this.updateDarkmode();
   },
   computed: {
-    darkmode: {
+    /*darkmode: {
       get() {
         return (
           localStorage.getItem("dark-theme") === "true" ||
@@ -81,23 +81,33 @@ export default {
         localStorage.setItem("dark-mode", (!!v).toString());
         this.updateDarkmode();
       },
-    },
+    },*/
   },
   methods: {
     goto(to: any) {
       this.$router.push(to);
     },
+    isDarkmode() {
+      return (
+        localStorage.getItem("theme") === "dark" ||
+        (!("theme" in localStorage) &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
+      );
+    },
     updateDarkmode() {
-      if (this.darkmode) {
+      if (this.isDarkmode()) {
         document.documentElement.classList.add("dark");
       } else {
         document.documentElement.classList.remove("dark");
       }
     },
     toggleDarkmode() {
-      console.log(this.darkmode, "before");
-      this.darkmode = !this.darkmode;
-      console.log(this.darkmode, "after");
+      if (this.isDarkmode()) {
+        localStorage.setItem("theme", "light");
+      } else {
+        localStorage.setItem("theme", "dark");
+      }
+      this.updateDarkmode();
     },
   },
 };

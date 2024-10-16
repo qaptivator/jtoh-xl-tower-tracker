@@ -41,16 +41,25 @@ Small visual changes (deployment 7, commit small visual changes)
 - Added an error message, when error occurs while obtaining Roblox data
 - Fixed the favicon.ico
 
+### v0.1.4
+
+Zone 1 towers (deployment 8, commit zone 1 updates)
+
+- Added new zone 1 citadels
+
 ## TODO List
 
+These are arranged in order of importance/usefulness
+
+- [ ] Replace "area" index with a name or id reference to the area, so that towers wont be tied by the index of the area in the array
+- [ ] Dark mode (i tried making it several times but it just doesn't want to work)
 - [ ] Button for showing full name without having to hover over the acronyms
 - [ ] Show locked/unlocked citadels and areas
 - [ ] Menu for uncompleted towers
 - [ ] Showing the tower's completion date somewhere
 - [ ] Maybe combine all these things into a single filter menu? (like sort by name, difficulty, locked/unlocked, date of completion, ascending/descending)
-- [x] RING 4 (when it releases)
 - [x] Indicator for checking did user even join JXP at all (could be useful for showing that the username is wrong)
-- [ ] Dark mode (i tried making it several times but it just doesn't want to work)
-- [x] Fix the catastrophic and terrifying difficulty texts being barely visible on white background (add a stroke around them)
+- [ ] FAQ page
 - [ ] Text for showing current version + centralized version variable
 - [ ] Improve the page routing (instead of using a single page and a query for username, have two different pages: one with input and other one with dynamic routing (turns out it's not really possible on static websites (with nuxt generate))
+- [ ] Maybe highlight obelisks or mini towers in some way

@@ -7,6 +7,8 @@ If there are any issues, contact me on Discord.
 [Website Link](https://qaptivator.github.io/jtoh-xl-tower-tracker/)
 [JToH XL Project Game Link](https://www.roblox.com/games/13218032675/)
 
+***NOTE: this project is likely scrapped. mostly because towerstats.com copied exactly what i did but added other fangames and gave unknown fangames a way to make their own checkers (i could have also done that). im a bit mad that i wasted so much time on this project for it to be devalued that quickly. also, JToH was renamed to EToH now, but im very lazy to rename it everywhere, so yeah. also, i wont keep on updating the tower list, it requires too manual labour for a thing nobody will ever need again. although i did have a lot of fun making this, and thanks to all nice people who tested this website as i was making it.***
+
 ## Update Log
 
 ### v0.1.0
